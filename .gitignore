@@ -1,0 +1,93 @@
+# Runtime data
+data/
+results/
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Type checkers & linters
+.mypy_cache/
+.ruff_cache/
+.pytype/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Ultralytics / YOLO runs (training artifacts)
+runs/
+wandb/
+mlruns/
+
+# Docker local overrides (keep Dockerfile and compose tracked)
+docker-compose.override.yml
+
+# Temporary uploads
+tmp/
+temp/
+uploads/
+
+# Large optional training checkpoints (keep best.pt / last.pt in weights/)
+# *.pt
+# !weights/best.pt
+# !weights/last.pt

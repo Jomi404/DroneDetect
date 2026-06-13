@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Detection — VisDrone YOLOv8</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div>
+        <p class="eyebrow">VisDrone · YOLOv8n</p>
+        <h1>Детекция объектов с дрона</h1>
+        <p class="subtitle">Загрузите снимок, запустите модель и получите bounding boxes для pedestrian, car и truck.</p>
+      </div>
+      <div class="status-pill" id="healthStatus">Проверка сервиса...</div>
+    </header>
+
+    <main class="grid">
+      <section class="card upload-card">
+        <h2>Загрузка изображения</h2>
+
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="fileInput" accept="image/*" hidden>
+          <div class="dropzone-content">
+            <div class="drop-icon">⬆</div>
+            <p><strong>Перетащите изображение сюда</strong></p>
+            <p>или нажмите для выбора файла</p>
+            <p class="hint">PNG, JPG, WEBP · до 20 МБ</p>
+          </div>
+        </div>
+
+        <div class="preview hidden" id="previewBlock">
+          <img id="previewImage" alt="Предпросмотр">
+          <p id="fileName" class="file-name"></p>
+        </div>
+
+        <label class="slider-label" for="confidenceRange">
+          Порог уверенности: <span id="confidenceValue">0.25</span>
+        </label>
+        <input type="range" id="confidenceRange" min="0.05" max="0.95" step="0.05" value="0.25">
+
+        <button class="primary-btn" id="detectBtn" disabled>Найти объекты</button>
+        <p class="error hidden" id="errorBox"></p>
+      </section>
+
+      <section class="card result-card">
+        <h2>Результат</h2>
+        <div class="metrics" id="metricsBlock">
+          <div><span>Объектов</span><strong id="detCount">—</strong></div>
+          <div><span>Задержка</span><strong id="latency">—</strong></div>
+          <div><span>Размер</span><strong id="imageSize">—</strong></div>
+        </div>
+
+        <div class="result-image-wrap hidden" id="resultImageWrap">
+          <img id="resultImage" alt="Результат детекции">
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          Результат появится после обработки изображения.
+        </div>
+
+        <ul class="detections-list" id="detectionsList"></ul>
+      </section>
+
+      <section class="card history-card">
+        <div class="history-header">
+          <h2>История запусков</h2>
+          <button class="ghost-btn" id="refreshHistoryBtn">Обновить</button>
+        </div>
+        <div class="stats" id="statsBlock">
+          <div><span>Всего</span><strong id="statTotal">0</strong></div>
+          <div><span>Ср. задержка</span><strong id="statLatency">0 мс</strong></div>
+          <div><span>Ср. объектов</span><strong id="statDetections">0</strong></div>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

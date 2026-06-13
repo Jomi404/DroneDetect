@@ -1,0 +1,12 @@
+services:
+  drone-detector:
+    build: .
+    container_name: drone-detector
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./weights:/app/weights:ro
+      - ./data:/app/data
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped

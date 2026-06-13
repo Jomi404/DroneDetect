@@ -1,0 +1,15 @@
+name: "VisDrone YOLOv8n Detector"
+version: "1.0.0"
+architecture: "YOLOv8n"
+trained_at: "2026-03-01"
+input_size: 1280
+dataset: "VisDrone2019-DET"
+classes:
+  0: pedestrian
+  1: car
+  2: truck
+weights_file: "weights/best.pt"
+weights_size_mb: 6.0
+description: >
+  Модель детекции объектов на снимках с дрона.
+  Обучена на подмножестве VisDrone-DET (car, pedestrian, truck).

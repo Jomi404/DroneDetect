@@ -15,7 +15,7 @@
 ## Быстрый старт (локально)
 
 ```bash
-cd plugins/Drone
+cd DroneDetect
 pip install -r requirements.txt
 uvicorn service.app.main:app --reload --host 0.0.0.0 --port 8000
 ```

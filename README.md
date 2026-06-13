@@ -52,7 +52,7 @@ docker compose up --build
 ## Структура проекта
 
 ```
-plugins/Drone/
+Drone/
 ├── configs/inference.yaml
 ├── models/model_info.yaml
 ├── weights/best.pt

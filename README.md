@@ -25,7 +25,7 @@ uvicorn service.app.main:app --reload --host 0.0.0.0 --port 8000
 ## Запуск через Docker
 
 ```bash
-cd plugins/Drone
+cd DroneDetect
 docker compose up --build
 ```
 
@@ -52,7 +52,7 @@ docker compose up --build
 ## Структура проекта
 
 ```
-Drone/
+DroneDetect/
 ├── configs/inference.yaml
 ├── models/model_info.yaml
 ├── weights/best.pt
@@ -70,7 +70,7 @@ Drone/
 ## Тесты
 
 ```bash
-cd plugins/Drone
+cd DroneDetect
 pytest tests/test_smoke.py -q
 ```
 
